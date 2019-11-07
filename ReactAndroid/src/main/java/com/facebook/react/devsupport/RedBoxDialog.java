@@ -231,7 +231,7 @@ import org.json.JSONObject;
 
   protected RedBoxDialog(
       Context context, DevSupportManager devSupportManager, @Nullable RedBoxHandler redBoxHandler) {
-    super(context, R.style.Theme_Catalyst_RedBox);
+    super(context, R.style.ReactAndroidTheme_Catalyst_RedBox);
 
     requestWindowFeature(Window.FEATURE_NO_TITLE);
 
@@ -249,7 +249,7 @@ import org.json.JSONObject;
         new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-            mDevSupportManager.handleReloadJS();
+            mDevSupportManager.reloadExpoApp();
           }
         });
     mDismissButton = (Button) findViewById(R.id.rn_redbox_dismiss_button);
@@ -303,7 +303,7 @@ import org.json.JSONObject;
       return true;
     }
     if (mDoubleTapReloadRecognizer.didDoubleTapR(keyCode, getCurrentFocus())) {
-      mDevSupportManager.handleReloadJS();
+      mDevSupportManager.reloadExpoApp();
     }
     return super.onKeyUp(keyCode, event);
   }
